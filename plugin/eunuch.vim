@@ -119,7 +119,7 @@ function! s:SudoWriteCmd() abort
   let &modified = v:shell_error
 endfunction
 
-command! -bar -bang -complete=file -nargs=? SudoEdit
+command! -bar -bang -complete=file -nargs=? Sudoedit
       \ call s:SudoSetup(fnamemodify(empty(<q-args>) ? expand('%') : <q-args>, ':p')) |
       \ if !&modified || !empty(<q-args>) |
       \   edit<bang> <args> |
@@ -128,7 +128,7 @@ command! -bar -bang -complete=file -nargs=? SudoEdit
       \   set noreadonly |
       \ endif
 
-command! -bar SudoWrite
+command! -bar Sudowrite
       \ call s:SudoSetup(expand('%:p')) |
       \ write!
 
